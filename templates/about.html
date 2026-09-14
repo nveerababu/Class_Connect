@@ -1,0 +1,42 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block body_block %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+
+<div class="about-wrapper">
+    <!-- Main Intro -->
+    <div class="about-card">
+        <h2>About ClassConnect</h2>
+        <p>
+            ClassConnect is a web-based Student Management System developed to keep student records organized and easily accessible. It replaces manual paperwork with a simple digital platform to manage enrollments, track student progress, and monitor course details.
+        </p>
+    </div>
+
+    <!-- Project Goals / What it does -->
+    <div class="info-grid">
+        <div class="info-box">
+            <h4>Student Records</h4>
+            <p>Perform basic CRUD operations to add, view, update, and remove student information easily.</p>
+        </div>
+        <div class="info-box">
+            <h4>Course Tracking</h4>
+            <p>Organize students based on their enrolled courses along with duration and fee structures.</p>
+        </div>
+        <div class="info-box">
+            <h4>Status Updates</h4>
+            <p>Monitor whether a student is currently Active, Enrolled, or has Completed their course.</p>
+        </div>
+    </div>
+
+    <!-- Tech Stack -->
+    <div class="about-card stack-card">
+        <h3>Technologies Used</h3>
+        <ul class="tech-list">
+            <li><strong>Backend:</strong> Python & Django Framework</li>
+            <li><strong>Database:</strong> SQLite</li>
+            <li><strong>Frontend:</strong> HTML5 & CSS3</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

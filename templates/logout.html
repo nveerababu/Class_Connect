@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block body_block %}
+<link rel="stylesheet" href="{% static 'css/logout.css' %}">
+
+<div class="logout-wrapper">
+    <div class="logout-card animate-card">
+        <div class="wave-icon">👋</div>
+        <h2>Logged Out Successfully!</h2>
+        <blockquote class="quote">
+            "Learning never exhausts the mind. Take a break, recharge, and come back stronger!"
+        </blockquote>
+        <p class="sub-text">Thank you for visiting. See you again soon!</p>
+        <a href="/accounts/login" class="btn-login-again">Log In Again</a>
+    </div>
+</div>
+{% endblock %}

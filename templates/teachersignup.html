@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/teachersignup.css' %}" />
+
+</head>
+<body>
+<img src="{% static '/images/signup99.png' %}" alt="Logo" width="150">
+<h1>Teacher Sign Up / Registration:</h1>
+<form method="POST">
+  {{ form.as_p }}
+   {% csrf_token %}
+  <button type="submit">Sign Up</button>
+</form>
+</body>
+</html>

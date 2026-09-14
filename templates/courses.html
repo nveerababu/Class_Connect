@@ -1,0 +1,66 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block body_block %}
+<link rel="stylesheet" href="{% static 'css/courses.css' %}">
+
+<div class="courses-box">
+    <h2>Courses List</h2>
+    <p class="subtitle">Select a course to see enrolled students</p>
+
+    <div class="courses-grid">
+        {% for c in courses %}
+            <a href="/courses/?course={{ c }}" class="course-card">
+                <h3>{{ c }}</h3>
+                <span>Click to View &rarr;</span>
+            </a>
+        {% endfor %}
+    </div>
+
+    {% if selected_course %}
+        <div class="table-card">
+            <div class="table-top">
+                <h3>Course: <span class="blue-text">{{ selected_course }}</span></h3>
+                <span class="count-tag">Students: {{ students.count }}</span>
+            </div>
+
+            {% if students %}
+                <table class="simple-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Duration</th>
+                            <th>Fees</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for s in students %}
+                        <tr>
+                            <td>{{ s.id }}</td>
+                            <td>{{ s.student_First_Name }}</td>
+                            <td>{{ s.student_Last_Name }}</td>
+                            <td>{{ s.course_Duration }}</td>
+                            <td>₹{{ s.course_Fees }}</td>
+                            <td>
+                                {% if s.status == 'Active' %}
+                                    <span class="badge green">Active</span>
+                                {% elif s.status == 'Completed' %}
+                                    <span class="badge blue">Completed</span>
+                                {% else %}
+                                    <span class="badge yellow">Enrolled</span>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p class="no-records">No students found for this course.</p>
+            {% endif %}
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

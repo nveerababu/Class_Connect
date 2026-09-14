@@ -1,0 +1,95 @@
+.logout-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 120px);
+    padding: 20px;
+}
+
+/* Card Entry Animation */
+.animate-card {
+    animation: slideUpFade 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideUpFade {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.96);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Hand Waving Animation */
+.wave-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    display: inline-block;
+    animation: waveHand 1.6s ease-in-out infinite;
+    transform-origin: 70% 70%;
+}
+
+@keyframes waveHand {
+    0% { transform: rotate(0deg); }
+    15% { transform: rotate(14deg); }
+    30% { transform: rotate(-12deg); }
+    45% { transform: rotate(14deg); }
+    60% { transform: rotate(-8deg); }
+    75% { transform: rotate(10deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.logout-card {
+    background: #ffffff;
+    max-width: 480px;
+    width: 100%;
+    padding: 40px 30px;
+    text-align: center;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+}
+
+.logout-card h2 {
+    font-size: 24px;
+    color: #1e293b;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.quote {
+    font-size: 15px;
+    font-style: italic;
+    color: #475569;
+    line-height: 1.6;
+    background-color: #f8fafc;
+    border-left: 4px solid #0d5ca8;
+    padding: 12px 16px;
+    margin: 18px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.sub-text {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 25px;
+}
+
+.btn-login-again {
+    display: inline-block;
+    background-color: #0d5ca8;
+    color: #ffffff;
+    padding: 11px 26px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-login-again:hover {
+    background-color: #0a4680;
+    transform: translateY(-2px);
+}
